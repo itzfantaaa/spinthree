@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/fonts/helvetica-neue.css?v123">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <style>.on-load {
+    display: none
+  }
+
+  .spinner-grow {
+    color: #343a40 !important;
+    display: inline-block;
+    vertical-align: text-bottom;
+    background-color: currentColor;
+    border-radius: 50%;
+    opacity: 0;
+    -webkit-animation: spinner-grow .75s linear infinite;
+    animation: spinner-grow .75s linear infinite;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+  }
+
+  .github-button {
+    color: transparent;
+  }
+  </style>
+  <style>
+    .cloudimage-360 .cloudimage-360-prev, .cloudimage-360 .cloudimage-360-next {
+      padding: 8px;
+      background: rgb(244, 244, 244);
+      border: none;
+      border-radius: 4px;
+    }
+
+    .cloudimage-360 .cloudimage-360-prev:focus, .cloudimage-360 .cloudimage-360-next:focus {
+      outline: none;
+    }
+
+    .cloudimage-360 .cloudimage-360-prev {
+      display: none;
+      position: absolute;
+      z-index: 100;
+      top: calc(50% - 15px);
+      left: 20px;
+    }
+
+    .cloudimage-360 .cloudimage-360-next {
+      display: none;
+      position: absolute;
+      z-index: 100;
+      top: calc(50% - 15px);
+      right: 20px;
+    }
+
+    .cloudimage-360 .cloudimage-360-prev:before, .cloudimage-360 .cloudimage-360-next:before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: 50% 50% / cover no-repeat;
+    }
+
+    .cloudimage-360 .cloudimage-360-prev:before {
+      background-image: url('https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/assets/img/arrow-left.svg');
+    }
+
+    .cloudimage-360 .cloudimage-360-next:before {
+      background-image: url('https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/assets/img/arrow-right.svg');
+    }
+
+    .cloudimage-360 .cloudimage-360-prev.not-active, .cloudimage-360 .cloudimage-360-next.not-active {
+      opacity: 0.4;
+      cursor: default;
+    }
+  </style>
+  <title>JS-cloudimage-360-view home addition</title>
+</head>
+
+<body>
+<!-- simply iniatialize it with class name "cloudimage-360", server folder path, file name and amount of images 
+
+https://res.cloudinary.com/dnacf2jdn/image/upload/v1625818532/lambo1/lambo10_betgqc.png
+
+
+-->
+<div id="spinner" class="spinner-grow text-dark" role="status"></div>
+
+<section id="main" class="wrapper" style="visibility: hidden;overflow: hidden;">
+  <section>
+    <div
+       class="cloudimage-360"
+       data-folder="https://res.cloudinary.com/dnacf2jdn/image/upload/v1625818532/lambo1/"
+       data-filename="lambo{index}_eaqskk.png"
+       data-amount="1"
+       data-magnifier="3"
+       data-responsive="scaleflex"
+       data-ratio="0.5"
+       data-stop-at-edges
+       data-spin-reverse
+       data-control-reverse
+    >
+      <button class="cloudimage-360-prev"></button>
+      <button class="cloudimage-360-next"></button>
+    </div>
+  </section>
+</section>
+
+
+
+
+<!-- Add script tag with CDN link to js-cloudimage-360-view lib after all content in body tag -->
+<script src="https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/2.1.0/js-cloudimage-360-view.min.js"></script>
+<!--<script src="../../build/js-cloudimage-360-view.min.js"></script>-->
+<script>
+  const spinner = document.getElementById('spinner');
+  const wrapper = document.getElementById('main');
+
+  wrapper.classList.add('active');
+  spinner.style.display = 'none';
+</script>
+</body>
+</html>
